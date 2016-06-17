@@ -1,15 +1,20 @@
-Check out the demo!
-
-Android application
-Desktop application
-WebGL html5 page (requires a WebGL enabled browser)
-Changelog
-
-See the Changelog page.
-
-Introduction
+### java-universal-tween-engine
 
 The Universal Tween Engine enables the interpolation of every attribute from any object in any Java project (being Swing, SWT, OpenGL or even Console-based). Implement the TweenAccessor interface, register it to the engine, and animate anything you want!
+
+#### Compile the library
+
+    gradle tween-engine-api:jar
+
+#### Check out the demo!
+
+    gradle tween-engine-tests:run
+
+[Android](https://play.google.com/store/apps/details?id=aurelienribon.tweenengine.demo)
+[Desktop application](https://code.google.com/archive/p/java-universal-tween-engine/downloads)
+[WebGL html5 page](http://www.aurelienribon.com/universal-tween-engine/gwt/demo.html)
+
+#### Introduction
 
 In one line, send your objects to another position (here x=20 and y=30), with a smooth elastic transition, during 1 second).
 

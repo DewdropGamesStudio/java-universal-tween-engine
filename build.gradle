@@ -1,0 +1,23 @@
+allprojects {
+    version = '6.3.4'
+    repositories {
+        mavenCentral()
+    }
+}
+
+project(":tween-engine-api") {
+    apply plugin: 'java'
+}
+
+project(":tween-engine-tests") {
+    apply plugin: 'java'
+    apply plugin: 'application'
+    ext {
+        gdxVersion = '1.9.3'
+    }
+    dependencies {
+        compile project(":tween-engine-api")
+        compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    }
+}
