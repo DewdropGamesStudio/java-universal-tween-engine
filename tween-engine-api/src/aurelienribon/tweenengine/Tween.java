@@ -156,7 +156,7 @@ public final class Tween extends BaseTween<Tween> {
 	 * @param defaultAccessor The accessor that will be used to tween any
 	 * object of class "someClass".
 	 */
-	public static void registerAccessor(Class<?> someClass, TweenAccessor<?> defaultAccessor) {
+	public static <KT extends VT, VT> void registerAccessor(Class<KT> someClass, TweenAccessor<VT> defaultAccessor) {
 		registeredAccessors.put(someClass, defaultAccessor);
 	}
 
@@ -165,8 +165,8 @@ public final class Tween extends BaseTween<Tween> {
 	 *
 	 * @param someClass An object class.
 	 */
-	public static TweenAccessor<?> getRegisteredAccessor(Class<?> someClass) {
-		return registeredAccessors.get(someClass);
+	public static <KT extends VT, VT> TweenAccessor<VT> getRegisteredAccessor(Class<KT> someClass) {
+		return (TweenAccessor<VT>) registeredAccessors.get(someClass);
 	}
 
 	// -------------------------------------------------------------------------
