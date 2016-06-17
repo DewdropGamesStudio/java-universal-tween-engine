@@ -17,7 +17,7 @@ public class Main {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.resizable = false;
 		cfg.vSyncEnabled = true;
-		cfg.useGL20 = false;
+		cfg.useGL30 = false;
 		cfg.width = 800;
 		cfg.height = 480;
 		cfg.title = "Tween-Engine tests";

@@ -10,10 +10,8 @@ import aurelienribon.tweenengine.equations.Quad;
 import aurelienribon.tweenengine.primitives.MutableFloat;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.utils.Align;
 
 /**
  * @author Aurelien Ribon | http://www.aurelienribon.com/
@@ -26,6 +24,7 @@ public class Tile {
 	private final Sprite veil;
 	private final OrthographicCamera camera;
 	private final BitmapFont font;
+	private final GlyphLayout glyphLayout = new GlyphLayout();
 	private final TweenManager tweenManager;
 	private final MutableFloat textOpacity = new MutableFloat(1);
 
@@ -61,11 +60,12 @@ public class Tile {
 
 		float wrapW = (sprite.getWidth() - sprite.getWidth()/10) * Gdx.graphics.getWidth() / camera.viewportWidth;
 
+		glyphLayout.setText(font, test.getTitle());
 		font.setColor(1, 1, 1, textOpacity.floatValue());
-		font.drawWrapped(batch, test.getTitle(),
-			sprite.getX() + sprite.getWidth()/20,
-			sprite.getY() + sprite.getHeight()*19/20,
-			wrapW);
+		font.draw(batch, test.getTitle(),
+				sprite.getX() + sprite.getWidth()/20,
+				sprite.getY() + sprite.getHeight()*19/20,
+				wrapW, Align.left, true);
 
 		if (veil.getColor().a > 0.1f) veil.draw(batch);
 	}
